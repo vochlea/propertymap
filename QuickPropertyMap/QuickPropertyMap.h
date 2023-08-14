@@ -55,6 +55,7 @@ public:
     void insert(const QByteArray& name, const QVariant& value) { insert(indexOf(name), value); }
 
 public:
+    bool built() const { return m_finalized; }
     int count()                           const { return m_propertyIndex.count();         }
     int indexOf(const QByteArray& name)   const { return m_propertyIndex.value(name, -1); }
     bool contains(const QByteArray& name) const { return m_propertyIndex.contains(name);  }
