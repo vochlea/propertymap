@@ -1,6 +1,11 @@
 #include "QuickPropertyMap.h"
 #include <private/qmetaobjectbuilder_p.h>
 
+#ifdef MF_PROTECTION_BUILD
+#include "cpExtensions.h"
+CP_NOINSTRUMENT_FILE
+#endif /* MF_PROTECTION_BULD */
+
 QuickPropertyMap::QuickPropertyMap(QObject *parent)
     : QuickPropertyMapBase(parent)
 {
